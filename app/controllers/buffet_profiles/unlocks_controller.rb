@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class BuffetProfile::UnlocksController < Devise::UnlocksController
+class BuffetProfiles::UnlocksController < Devise::UnlocksController
   # GET /resource/unlock/new
   # def new
   #   super

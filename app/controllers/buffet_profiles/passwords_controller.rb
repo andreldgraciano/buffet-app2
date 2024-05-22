@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class BuffetProfile::PasswordsController < Devise::PasswordsController
+class BuffetProfiles::PasswordsController < Devise::PasswordsController
   # GET /resource/password/new
   # def new
   #   super
