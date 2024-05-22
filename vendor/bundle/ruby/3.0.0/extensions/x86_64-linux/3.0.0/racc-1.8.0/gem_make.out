@@ -1,0 +1,15 @@
+current directory: /home/andredias/workspace/buffet-app2/vendor/bundle/ruby/3.0.0/gems/racc-1.8.0/ext/racc/cparse
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20240522-6730-dxwrsk.rb extconf.rb
+creating Makefile
+
+current directory: /home/andredias/workspace/buffet-app2/vendor/bundle/ruby/3.0.0/gems/racc-1.8.0/ext/racc/cparse
+make DESTDIR\= clean
+
+current directory: /home/andredias/workspace/buffet-app2/vendor/bundle/ruby/3.0.0/gems/racc-1.8.0/ext/racc/cparse
+make DESTDIR\=
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /home/andredias/workspace/buffet-app2/vendor/bundle/ruby/3.0.0/gems/racc-1.8.0/ext/racc/cparse
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20240522-6730-kkm3as/racc

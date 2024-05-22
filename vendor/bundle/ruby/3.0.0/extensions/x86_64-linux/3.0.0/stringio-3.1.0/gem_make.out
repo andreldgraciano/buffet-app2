@@ -1,0 +1,15 @@
+current directory: /home/andredias/workspace/buffet-app2/vendor/bundle/ruby/3.0.0/gems/stringio-3.1.0/ext/stringio
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20240522-6730-qg7ek7.rb extconf.rb
+creating Makefile
+
+current directory: /home/andredias/workspace/buffet-app2/vendor/bundle/ruby/3.0.0/gems/stringio-3.1.0/ext/stringio
+make DESTDIR\= clean
+
+current directory: /home/andredias/workspace/buffet-app2/vendor/bundle/ruby/3.0.0/gems/stringio-3.1.0/ext/stringio
+make DESTDIR\=
+compiling stringio.c
+linking shared-object stringio.so
+
+current directory: /home/andredias/workspace/buffet-app2/vendor/bundle/ruby/3.0.0/gems/stringio-3.1.0/ext/stringio
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 stringio.so ./.gem.20240522-6730-drue62
