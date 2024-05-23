@@ -12,27 +12,34 @@
   <body>
     <header>
 
-      <% if customer_signed_in? %>
-        <h3>Customer</h3>
-        <%= link_to 'Sign out', destroy_customer_session_path, method: :delete, data: { turbo_method: :delete} %>
-        <%= link_to 'Edit registration', edit_customer_registration_path %>
-      <% elsif !buffet_profile_signed_in? %>
-        <h3>Customer</h3>
-        <%= link_to 'Sign in', new_customer_session_path %>
-        <%= link_to 'Sign up', new_customer_registration_path %>
-      <% end %>
-
-      <% if buffet_profile_signed_in? %>
-        <h3>Buffet Profile</h3>
-        <%= link_to 'Sign out', destroy_buffet_profile_session_path, method: :delete, data: { turbo_method: :delete} %>
-        <%= link_to 'Edit registration', edit_buffet_profile_registration_path %>
-      <% elsif !customer_signed_in? %>
-        <h3>Buffet Profile</h3>
-        <%= link_to 'Sign in', new_buffet_profile_session_path %>
-        <%= link_to 'Sign up', new_buffet_profile_registration_path %>
-      <% end %>
-
+      <div class="user-session">
+        <% if customer_signed_in? %>
+          <div class="user-info">
+            <h3><%= current_customer.name %></h3>
+            <%= button_to 'Sign out', destroy_customer_session_path, method: :delete %>
+            <%= link_to 'Edit registration', edit_customer_registration_path %>
+          </div>
+        <% elsif buffet_profile_signed_in? %>
+          <div class="user-info">
+            <h3><%= current_buffet_profile.buffet.brand_name %></h3>
+            <%= button_to 'Sign out', destroy_buffet_profile_session_path, method: :delete %>
+            <%= link_to 'Edit registration', edit_buffet_profile_registration_path %>
+          </div>
+        <% else %>
+          <div class="user-signin">
+            <h3>Customer</h3>
+            <%= link_to 'Sign in', new_customer_session_path %>
+            <%= link_to 'Sign up', new_customer_registration_path %>
+          </div>
+          <div class="user-signin">
+            <h3>Buffet Profile</h3>
+            <%= link_to 'Sign in', new_buffet_profile_session_path %>
+            <%= link_to 'Sign up', new_buffet_profile_registration_path %>
+          </div>
+        <% end %>
+      </div>
     </header>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     

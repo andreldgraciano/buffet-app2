@@ -1,0 +1,18 @@
+<div>
+  <h1><%= @buffet.brand_name %></h1>
+  <%= @buffet.full_information %> <br>
+  <%= @buffet.description %> <br>
+  <%= @buffet.full_address %> <br>
+  <%= @buffet.phone %> <br>
+  <%= @buffet.email %> <br>
+  <% @buffet.payments.each do |p| %>
+    <%= p.name %>
+  <% end %>
+</div>
+
+<% if buffet_profile_signed_in? %>
+  <hr>
+  <div>
+    <%= link_to 'Edit Buffet', edit_buffet_path(@buffet) %>
+  </div>
+<% end %>

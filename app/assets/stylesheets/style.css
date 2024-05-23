@@ -1,0 +1,14 @@
+.user-session{
+  display: flex;
+  gap: 50px;
+  text-align: center;
+  justify-content: end;
+}
+
+.user-info{
+
+}
+
+.user-signin{
+
+}

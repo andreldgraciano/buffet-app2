@@ -1,0 +1,93 @@
+<%= form_with(model: @buffet) do |form| %>
+
+  <div>
+    <%= form.label :brand_name %>
+    <%= form.text_field :brand_name %>
+  </div>
+  
+  <div>
+    <%= form.label :corporation_name %>
+    <%= form.text_field :corporation_name %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :cnpj %>
+    <%= form.number_field :cnpj %>
+  </div>
+
+  <div>
+    <%= form.label :phone %>
+    <%= form.telephone_field :phone %>
+  </div>
+
+  <div>
+    <%= form.label :cep %>
+    <%= form.text_field :cep %>
+  </div>
+
+  <div>
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :district %>
+    <%= form.text_field :district %>
+  </div>
+
+  <div>
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div>
+    <%= form.label :state %>
+    <%= form.select :state, options_for_select([
+      ['AC', 'Acre'],
+      ['AL', 'Alagoas'],
+      ['AP', 'Amapá'],
+      ['AM', 'Amazonas'],
+      ['BA', 'Bahia'],
+      ['CE', 'Ceará'],
+      ['DF', 'Distrito Federal'],
+      ['ES', 'Espírito Santo'],
+      ['GO', 'Goiás'],
+      ['MA', 'Maranhão'],
+      ['MT', 'Mato Grosso'],
+      ['MS', 'Mato Grosso do Sul'],
+      ['MG', 'Minas Gerais'],
+      ['PA', 'Pará'],
+      ['PB', 'Paraíba'],
+      ['PR', 'Paraná'],
+      ['PE', 'Pernambuco'],
+      ['PI', 'Piauí'],
+      ['RJ', 'Rio de Janeiro'],
+      ['RN', 'Rio Grande do Norte'],
+      ['RS', 'Rio Grande do Sul'],
+      ['RO', 'Rondônia'],
+      ['RR', 'Roraima'],
+      ['SC', 'Santa Catarina'],
+      ['SP', 'São Paulo'],
+      ['SE', 'Sergipe'],
+      ['TO', 'Tocantins']
+    ], @buffet.state) %>
+  </div>
+
+  <div>
+    <%= form.label :payments %>
+    <% Payment.all.each do |payment| %> <br>
+      <%= check_box_tag 'buffet[payment_ids][]', payment.id, @buffet.payments.include?(payment) %>
+      <%= payment.name %><br>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+  
+<% end %>

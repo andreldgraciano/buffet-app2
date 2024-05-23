@@ -2,6 +2,7 @@
 
 class Customers::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
+  before_action :logout_buffet_profile, only: [:create]
 
   # GET /resource/sign_in
   # def new
@@ -17,6 +18,14 @@ class Customers::SessionsController < Devise::SessionsController
   # def destroy
   #   super
   # end
+
+  private
+
+  def logout_buffet_profile
+    if buffet_profile_signed_in?
+      sign_out(:buffet_profile)
+    end
+  end
 
   # protected
 

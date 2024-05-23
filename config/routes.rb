@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   }
 
   root to: "home#index"
+
+  resources :buffets, only: [:index, :show, :new, :create, :edit, :update]
 end
