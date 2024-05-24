@@ -1,6 +1,6 @@
 <% if @buffets.any? %>
   <% @buffets.each do |buffet| %>
-    <div>
+    <div id="buffet<%= buffet.id %>">
       <h2><%= link_to buffet.brand_name, buffet_path(buffet) %></h2>
       <p><%= buffet.city %> - <%= buffet.state %></p>
     </div>
