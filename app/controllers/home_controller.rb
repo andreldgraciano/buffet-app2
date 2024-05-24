@@ -5,7 +5,7 @@ class HomeController < ApplicationController
       if @buffet
         redirect_to buffet_path(@buffet)
       else
-        redirect_to new_buffet_path
+        redirect_to new_buffet_path, notice: 'Register your buffet'
       end
     else
       redirect_to buffets_path

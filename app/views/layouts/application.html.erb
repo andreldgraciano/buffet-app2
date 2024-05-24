@@ -11,6 +11,15 @@
 
   <body>
     <header>
+      <% if !buffet_profile_signed_in? %>
+        <div class="header_logo"><h1> <%= link_to 'Cadê Buffet?', buffets_path %> </h1></div>
+      <% else %>
+        <% if current_buffet_profile.buffet %>
+          <div class="header_logo"><h1> <%= link_to 'Cadê Buffet?', buffet_path(current_buffet_profile.buffet) %> </h1></div>
+        <% else %>
+          <div class="header_logo"><h1>Cadê Buffet?</h1></div>
+        <% end %>
+      <% end %>
 
       <div class="user-session">
         <% if customer_signed_in? %>
@@ -21,7 +30,11 @@
           </div>
         <% elsif buffet_profile_signed_in? %>
           <div class="user-info">
-            <h3><%= current_buffet_profile.buffet.brand_name %></h3>
+            <% if current_buffet_profile.buffet%>
+              <h3><%= current_buffet_profile.buffet.brand_name %></h3>
+            <% else %>
+              <h4>Register the buffet!</h4>
+            <% end %>
             <%= button_to 'Sign out', destroy_buffet_profile_session_path, method: :delete %>
             <%= link_to 'Edit registration', edit_buffet_profile_registration_path %>
           </div>

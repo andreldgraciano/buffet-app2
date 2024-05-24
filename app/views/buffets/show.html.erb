@@ -1,18 +1,24 @@
 <div>
   <h1><%= @buffet.brand_name %></h1>
-  <%= @buffet.full_information %> <br>
-  <%= @buffet.description %> <br>
-  <%= @buffet.full_address %> <br>
-  <%= @buffet.phone %> <br>
-  <%= @buffet.email %> <br>
+  <p><%= @buffet.description %></p>
+  <% if buffet_profile_signed_in? %>
+    <p><%= @buffet.full_information %></p>
+  <% else %>
+    <p><%= @buffet.cnpj %></p>
+  <% end %>
+  <p><%= @buffet.full_address %></p>
+  <p><%= @buffet.phone %></p>
+  <p><%= @buffet.email %></p>
   <% @buffet.payments.each do |p| %>
     <%= p.name %>
   <% end %>
 </div>
 
 <% if buffet_profile_signed_in? %>
-  <hr>
+  <br>
   <div>
     <%= link_to 'Edit Buffet', edit_buffet_path(@buffet) %>
   </div>
 <% end %>
+
+<hr>

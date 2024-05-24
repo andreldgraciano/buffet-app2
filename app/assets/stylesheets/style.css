@@ -1,3 +1,13 @@
+body{
+  margin: 0 50px;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  background-color: azure;
+}
+
 .user-session{
   display: flex;
   gap: 50px;
@@ -6,9 +16,7 @@
 }
 
 .user-info{
-
 }
 
 .user-signin{
-
 }

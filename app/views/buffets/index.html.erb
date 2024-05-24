@@ -1,0 +1,10 @@
+<% if @buffets.any? %>
+  <% @buffets.each do |buffet| %>
+    <div>
+      <h2><%= link_to buffet.brand_name, buffet_path(buffet) %></h2>
+      <p><%= buffet.city %> - <%= buffet.state %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p>There are no registered buffets.</p>
+<% end %>
